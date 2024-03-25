@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="background-color: Crimson">Here is Your All the Product you Added</h1><br><br>
+{% for i in product %}
+<h1>
+    Name      : {{i.name}}
+    Price     : {{i.price}}
+    Quantity  : {{i.quantity}}
+    Description: {{i.description}}<br><br>
+    <a href="{% url 'update-product' i.id %}">Update Product</a><br><br>
+    <a href="{% url 'delete-product' i.id %}">Delete Product</a><br><br>
+</h1>
+{% endfor %}
+<a href="{% url 'add-product' %}">Add Product</a><br><br>
+<a href="{% url 'home' %}">Go To Home_Page</a><br><br>
+<a href="{% url 'post' %}">Go To Post_Page</a><br><br>
+</body>
+</html>
